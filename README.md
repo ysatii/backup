@@ -59,9 +59,34 @@ rsync -ac --delete --exclude=".*/" . /tmp/backup --progress -v
 
 ## Решение 2
 
-1. `Запустим третий сервер на python порту 7777`  
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_13.jpg)  
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_14.jpg)  
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_15.jpg)  
+1. `Создадим скрипт для выполнения задания`  
+```
+#!/bin/bash
+if [[ $(rsync -ac --delete . /tmp/backup --progress -v) ]]  ; then
+        $(logger success backup script.sh)
+else
+        $(logger error backup script.sh)
+fi
+```
+
+в случании успеха получим в системном логе запись "logger success backup script.sh"
+В случаи проблем при выполнении получим ошибку "logger error backup script.sh"
+
+2. `Запустим скриптт и пострим системный лог`
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2.jpg) 
+скрипт отработал успешно 
+
+посмотрим содержимое домашнего каталога и каталога с копией
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_1.jpg) 
+
+2. `Cron`
+рРедакириуем задание Cron и задаем путь до скрипта
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_2.jpg) 
+
+Убеждаемся что задание присутвиет в списке Cron
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg) 
+
+Убеждаемся что файлы скопированы
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg) 
 
 
