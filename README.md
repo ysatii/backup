@@ -11,14 +11,38 @@
 
  
 ## Решение 1
-1. `Запустим сервера на портах 8888 и 9999`
+1. `Установим пакет rsync`
+![alt text](https://github.com/ysatii/backup/blob/main/img/image1.jpg)  
 
-создадим в папке проэтка папку **http1** и скопируем в нее файл
-[файл](https://github.com/netology-code/sflt-homeworks/tree/main/2/http1)
-перейдем в нее и запусим сервер
+2. `команда и ее опции `
 ```
-python3 -m http.server 8888 --bind 0.0.0.0
+rsync -ac --delete --exclude=".*/" . /tmp/backup --progress -v
 ```
+-c - Проверка контрольных сумм для файлов;
+-a - Режим архивирования, когда сохраняются все атрибуты оригинальных файлов;
+--delete - Удалять файлы которых нет в источнике;
+--exclude - Исключить файлы по шаблону;
+--progress - Выводить прогресс передачи файла;
+-v - Выводить подробную информацию о процессе копирования;
+
+результат применения команды
+![alt text](https://github.com/ysatii/backup/blob/main/img/image1_1.jpg)  
+
+сравнение каталогов, нагляднее в утилите "MC"
+![alt text](https://github.com/ysatii/backup/blob/main/img/image1_2.jpg) 
+
+еще раз запустим скрипт 
+```
+rsync -ac --delete --exclude=".*/" . /tmp/backup --progress -v
+```
+передачи данных нет, файлы не изменялись!
+![alt text](https://github.com/ysatii/backup/blob/main/img/image1_3.jpg) 
+
+Данный файл содержиться в домашней директории, попробум зменить пару символов не изменяя общей длины  файла
+и снова выполним синхронизацию 
+
+видим что изменился только один файл!
+![alt text](https://github.com/ysatii/backup/blob/main/img/image1_4.jpg) 
  
 
  
