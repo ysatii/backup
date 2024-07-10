@@ -80,7 +80,7 @@ fi
 ![alt text](https://github.com/ysatii/backup/blob/main/img/image2_1.jpg)   
 
 2. `Cron`  
-рРедакириуем задание Cron и задаем путь до скрипта  
+Редакириуем задание Cron и задаем путь до скрипта  
 ![alt text](https://github.com/ysatii/backup/blob/main/img/image2_2.jpg)   
 
 Убеждаемся что задание присутвиет в списке Cron  
@@ -89,5 +89,6 @@ fi
 Убеждаемся что файлы скопированы  
 ![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg)   
 
+3. `Cron файл `  
 [файл cron](https://github.com/ysatii/backup/blob/main/crontabs/lamer)
 
