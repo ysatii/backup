@@ -69,24 +69,25 @@ else
 fi
 ```
 
-в случании успеха получим в системном логе запись "logger success backup script.sh"
-В случаи проблем при выполнении получим ошибку "logger error backup script.sh"
+в случании успеха получим в системном логе запись "logger success backup script.sh"  
+В случаи проблем при выполнении получим ошибку "logger error backup script.sh"  
 
-2. `Запустим скриптт и пострим системный лог`
-![alt text](https://github.com/ysatii/backup/blob/main/img/image2.jpg) 
-скрипт отработал успешно 
+2. `Запустим скриптт и пострим системный лог`  
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2.jpg)   
+скрипт отработал успешно   
 
-посмотрим содержимое домашнего каталога и каталога с копией
-![alt text](https://github.com/ysatii/backup/blob/main/img/image2_1.jpg) 
+посмотрим содержимое домашнего каталога и каталога с копией  
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_1.jpg)   
 
-2. `Cron`
-рРедакириуем задание Cron и задаем путь до скрипта
-![alt text](https://github.com/ysatii/backup/blob/main/img/image2_2.jpg) 
+2. `Cron`  
+рРедакириуем задание Cron и задаем путь до скрипта  
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_2.jpg)   
 
-Убеждаемся что задание присутвиет в списке Cron
-![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg) 
+Убеждаемся что задание присутвиет в списке Cron  
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg)   
 
-Убеждаемся что файлы скопированы
-![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg) 
+Убеждаемся что файлы скопированы  
+![alt text](https://github.com/ysatii/backup/blob/main/img/image2_3.jpg)   
 
+[файл cron](https://github.com/ysatii/backup/blob/main/crontabs/lamer)
 
